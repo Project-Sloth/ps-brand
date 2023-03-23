@@ -1,20 +1,12 @@
 ![LJ BRAND](https://user-images.githubusercontent.com/91661118/144402490-add10012-0c2b-42bb-8d9f-c5e215cf3d7e.png)
 
-# 🎅🎄✔️ lj-brand used with QBCore Framework ✅🦌🤶
+# ✔️ Formally known as lj-brand
 Join my Discord laboratory for updates, support, and special early testing!
-<br>
-https://discord.gg/loljoshie (without-vanity url: https://discord.gg/HH6uTcBfew)
-
-Very simple checklist system for newcomers and toggleable in-game command branding logo. Written in Vue.js
-<br>
-Runs at ~ 0.00 ms
 
 # Dependencies
 * [qbcore framework](https://github.com/qbcore-framework)
 * [interact-sound](https://github.com/qbcore-framework/interact-sound) (if you want sound effects)
 
-# Recommended
-* [lj-brand](https://github.com/loljoshie/lj-menu) **this is only compatiable with lj-hud**
 
 ## Event: All you need is this event. It can go pretty much anywhere.
 ```lua

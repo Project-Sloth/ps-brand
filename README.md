@@ -14,8 +14,6 @@ ps-brand, formerly known as [lj-brand](https://github.com/loljoshie/lj-brand), w
 * Checklist requires you to checkmark all boxes
 * Button is disabled until requirements are met.
 * Easy to use and customize. For people that just want all branding in one place, and allow community to choose if they want to see the branding logo of the server while playing.
-* (This entire script was just an excuse so I can play around with Vue more ❤️)
-#
 
 # Previews
 ## Checklist completed & Not completed

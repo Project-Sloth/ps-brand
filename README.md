@@ -1,6 +1,6 @@
 ![LJ BRAND](https://user-images.githubusercontent.com/91661118/144402490-add10012-0c2b-42bb-8d9f-c5e215cf3d7e.png)
 
-# ✔️ Formally known as lj-brand
+# ✔️ Formally known as ps-brand
 Join my Discord laboratory for updates, support, and special early testing!
 
 # Dependencies
@@ -10,7 +10,7 @@ Join my Discord laboratory for updates, support, and special early testing!
 
 ## Event: All you need is this event. It can go pretty much anywhere.
 ```lua
-TriggerEvent('lj-brand:client:open')
+TriggerEvent('ps-brand:client:open')
 ```
 ## Example:
 #### I'd recommend putting it in qb-clothing where newcomers first create their characters on the server.
@@ -37,7 +37,7 @@ AddEventHandler('qb-clothes:client:CreateFirstCharacter', function()
         })
     end)
         Wait(1200)
-        TriggerEvent('lj-brand:client:open')
+        TriggerEvent('ps-brand:client:open')
 end)
 ```
 

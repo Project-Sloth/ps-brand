@@ -3,7 +3,7 @@ local showBrand = false
 
 RegisterNUICallback('showBrand', function()
     Wait(50)
-    TriggerEvent("lj-brand:client:Logo")
+    TriggerEvent("ps-brand:client:Logo")
 end) 
 
 
@@ -23,7 +23,7 @@ RegisterNetEvent("QBCore:Client:OnPlayerLoaded", function()
     end
 end)
 
-RegisterNetEvent("lj-brand:client:Logo", function()
+RegisterNetEvent("ps-brand:client:Logo", function()
     showBrand = not showBrand
     TriggerEvent("hud:client:checklistSounds")
     if showBrand == true then
@@ -40,7 +40,7 @@ RegisterNetEvent("lj-brand:client:Logo", function()
     TriggerEvent("hud:client:checklistSounds")
 end)
 
-AddEventHandler('lj-brand:client:open', function()
+AddEventHandler('ps-brand:client:open', function()
     SetNuiFocus(true, true)
     SendNUIMessage({ action = "open"}) 
     showCheck = true

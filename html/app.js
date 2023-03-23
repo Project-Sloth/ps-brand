@@ -64,7 +64,7 @@ app1.mount('#checklist')
 // where it gets sent to lua nuicallback
 function closeCheckList() {
   $("#checklist").fadeOut(550);
-  $.post('https://lj-brand/closeCheckList');
+  $.post('https://ps-brand/closeCheckList');
 }
 
 // where it creates function for opening menu

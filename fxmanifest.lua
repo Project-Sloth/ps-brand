@@ -1,7 +1,7 @@
 fx_version 'cerulean'
 game 'gta5'
 
-description 'lj-brand'
+description 'ps-brand'
 version '1.0'
 author 'github.com/loljoshie'
 

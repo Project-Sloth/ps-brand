@@ -7,40 +7,6 @@ ps-brand, formerly known as [lj-brand](https://github.com/loljoshie/lj-brand), w
 * [qbcore framework](https://github.com/qbcore-framework)
 * [interact-sound](https://github.com/qbcore-framework/interact-sound) (if you want sound effects)
 
-
-## Event: All you need is this event. It can go pretty much anywhere.
-```lua
-TriggerEvent('ps-brand:client:open')
-```
-## Example:
-#### I'd recommend putting it in qb-clothing where newcomers first create their characters on the server.
-* Find this in **qb-clothing/client.lua/RegisterNetEvent('qb-clothes:client:CreateFirstCharacter')**
-* And replace with this instead
-```lua
-RegisterNetEvent('qb-clothes:client:CreateFirstCharacter')
-AddEventHandler('qb-clothes:client:CreateFirstCharacter', function()
-    QBCore.Functions.GetPlayerData(function(PlayerData)
-        local skin = "mp_m_freemode_01"
-        openMenu({
-            {menu = "character", label = "Character", selected = true},
-            {menu = "clothing", label = "Features", selected = false},
-            {menu = "accessoires", label = "Accessories", selected = false}
-        })
-
-        if PlayerData.charinfo.gender == 1 then 
-            skin = "mp_f_freemode_01" 
-        end
-        
-        ChangeToSkinNoUpdate(skin)
-        SendNUIMessage({
-            action = "ResetValues",
-        })
-    end)
-        Wait(1200)
-        TriggerEvent('ps-brand:client:open')
-end)
-```
-
 # Key Features
 * Configurable logo (/logo)
 * Toggleable logo
@@ -61,6 +27,71 @@ end)
 ![checklist gif](https://user-images.githubusercontent.com/91661118/144400634-44705317-eb68-4872-b2ba-ac1071fea607.gif)
 ### checklist clothing example
 ![checklist example](https://user-images.githubusercontent.com/91661118/144400792-a8679b3e-9e6c-4f0c-85e0-56ccfcdf92eb.png)
+
+
+## Event: All you need is this event. It can go pretty much anywhere.
+```lua
+TriggerEvent('ps-brand:client:open')
+```
+## Example:
+#### I'd recommend putting it in qb-clothing where newcomers first create their characters on the server.
+* Find this in **qb-clothing/client.lua/RegisterNetEvent('qb-clothes:client:CreateFirstCharacter')** (Around Line 1239)
+* And replace with this instead
+```lua
+RegisterNetEvent('qb-clothes:client:CreateFirstCharacter')
+AddEventHandler('qb-clothes:client:CreateFirstCharacter', function()
+    QBCore.Functions.GetPlayerData(function(pData)
+        local skin = "mp_m_freemode_01"
+        openMenu({
+            {menu = "character", label = "Character", selected = true},
+            {menu = "clothing", label = "Features", selected = false},
+            {menu = "accessoires", label = "Accessories", selected = false}
+        })
+
+        if pData.charinfo.gender == 1 then
+            skin = "mp_f_freemode_01"
+        end
+
+        ChangeToSkinNoUpdate(skin)
+        SendNUIMessage({
+            action = "ResetValues",
+        })
+    end)
+        Wait(1200)
+        TriggerEvent('ps-brand:client:open')
+end)    
+```
+***Illenium-Appearance***
+**illenium-appearance/client/framework/qb/main.lua** (Around Line 89)
+Replace the code with this instead. 
+
+```lua
+RegisterNetEvent("qb-clothes:client:CreateFirstCharacter", function()
+    QBCore.Functions.GetPlayerData(function(pd)
+        PlayerData = pd
+        setClientParams()
+        InitializeCharacter(Framework.GetGender(true))
+        Wait(1200)
+        TriggerEvent('lj-brand:client:open')
+    end)
+end)
+```
+
+You will also need to edit CSS to move to the right side for illenium-appearance, see below for changes.
+
+```css
+div#checklist {
+  display: none;
+  position: absolute;
+  height: auto;
+  max-width: 18%;
+  right: 0%;
+  background: #232833;
+}
+```
+
+
+
 
 # Change Logs
 

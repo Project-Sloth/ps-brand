@@ -1,6 +1,6 @@
 ![LJ BRAND](https://user-images.githubusercontent.com/91661118/144402490-add10012-0c2b-42bb-8d9f-c5e215cf3d7e.png)
 
-# ✔️ Formally known as ps-brand
+# Formally known as lj-brand
 ps-brand, formerly known as [lj-brand](https://github.com/loljoshie/lj-brand), which was launched by loljoshie two years ago, is making a comeback. This script is a guide for newcomers, providing them with a checklist of essential elements to help get started on the server when they first join.
 
 # Dependencies

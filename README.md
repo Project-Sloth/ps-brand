@@ -18,25 +18,36 @@ ps-brand, formerly known as [lj-brand](https://github.com/loljoshie/lj-brand), w
 #
 
 # Previews
-### where to edit (html) and config
-![config html](https://user-images.githubusercontent.com/91661118/144399653-301103f3-5b15-4b83-86b9-cc56c1ae7689.PNG)
-![config lua](https://user-images.githubusercontent.com/91661118/144399687-0e3aa6d9-a493-4dfd-8af8-4d0a71c89625.PNG)
-### checklist completed / not completed
+## Checklist completed & Not completed
 ![checklist](https://user-images.githubusercontent.com/91661118/144400484-fe5734fb-af43-45a8-be4c-4dcdac7e642d.png)
-### checklist gif
+
+## Checklist gif
 ![checklist gif](https://user-images.githubusercontent.com/91661118/144400634-44705317-eb68-4872-b2ba-ac1071fea607.gif)
-### checklist clothing example
+
+## Checklist clothing example
 ![checklist example](https://user-images.githubusercontent.com/91661118/144400792-a8679b3e-9e6c-4f0c-85e0-56ccfcdf92eb.png)
 
+# Installation 
+
+## Editing the default config list
+![config html](https://user-images.githubusercontent.com/91661118/144399653-301103f3-5b15-4b83-86b9-cc56c1ae7689.PNG)
+![config lua](https://user-images.githubusercontent.com/91661118/144399687-0e3aa6d9-a493-4dfd-8af8-4d0a71c89625.PNG)
 
 ## Event: All you need is this event. It can go pretty much anywhere.
 ```lua
 TriggerEvent('ps-brand:client:open')
 ```
 ## Example:
-#### I'd recommend putting it in qb-clothing where newcomers first create their characters on the server.
-* Find this in **qb-clothing/client.lua/RegisterNetEvent('qb-clothes:client:CreateFirstCharacter')** (Around Line 1239)
-* And replace with this instead
+#### We recommend putting it in qb-clothing where newcomers first create their characters on the server.
+
+# qb-clothing
+
+* Find this event on qb-clothing-client.lua around Line 1239
+```lua
+RegisterNetEvent('qb-clothes:client:CreateFirstCharacter')
+```
+
+* Replace with this instead
 ```lua
 RegisterNetEvent('qb-clothes:client:CreateFirstCharacter')
 AddEventHandler('qb-clothes:client:CreateFirstCharacter', function()
@@ -61,10 +72,11 @@ AddEventHandler('qb-clothes:client:CreateFirstCharacter', function()
         TriggerEvent('ps-brand:client:open')
 end)    
 ```
-***Illenium-Appearance***
-**illenium-appearance/client/framework/qb/main.lua** (Around Line 89)
-Replace the code with this instead. 
+# Illenium-Appearance
 
+* Find the below event, around line 89 on /qb/main.lua.
+
+* Replace with this. 
 ```lua
 RegisterNetEvent("qb-clothes:client:CreateFirstCharacter", function()
     QBCore.Functions.GetPlayerData(function(pd)
@@ -77,7 +89,7 @@ RegisterNetEvent("qb-clothes:client:CreateFirstCharacter", function()
 end)
 ```
 
-You will also need to edit CSS to move to the right side for illenium-appearance, see below for changes.
+* Edit CSS to move the checklist to the right.
 
 ```css
 div#checklist {
@@ -89,14 +101,3 @@ div#checklist {
   background: #232833;
 }
 ```
-
-
-
-
-# Change Logs
-
-### 1.0
-* Initial release
-
-# Issues and Suggestions
-Please use the GitHub issues system to report issues or make suggestions, when making suggestion, please keep [Suggestion] in the title to make it clear that it is a suggestion.
